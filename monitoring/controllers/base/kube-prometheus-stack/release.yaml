@@ -31,3 +31,18 @@ spec:
   values:
     grafana:
       adminPassword: pallava
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+        # hosts:
+        #   - grafana.domain.com
+        hosts:
+          - grs.vibingmonk.in
+
+        ## TLS configuration for grafana Ingress
+        ## Secret must be manually created in the namespace
+        ##
+        tls: []
+        # - secretName: grafana-general-tls
+        #   hosts:
+        #   - grafana.example.com
