@@ -35,4 +35,4 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      naem: sops-age
+      name: sops-age
