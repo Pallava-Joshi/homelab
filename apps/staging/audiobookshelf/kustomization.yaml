@@ -4,4 +4,4 @@ namespace: audiobookshelf
 resources:
   - ../../base/audiobookshelf/
   - cloudflare.yaml
-  - cloudflare-sercret.yaml
+  - cloudflare-secret.yaml
