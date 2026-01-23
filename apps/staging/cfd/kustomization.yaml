@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: cfd
 resources:
   - ../../base/cfd
-  # - cloudflare.yaml
-  # - cloudflare-secret.yaml
+  - cloudflare.yaml
+  - cloudflare-secret.yaml
   # - cfd-container-env-secret.yaml
-  - web-ingress.yaml
