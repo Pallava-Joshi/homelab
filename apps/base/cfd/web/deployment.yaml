@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: ghcr.io/pallava-joshi/cfd/web:v1.2.2
+          image: ghcr.io/pallava-joshi/cfd/web:latest
           ports:
             - containerPort: 3000
               name: http
