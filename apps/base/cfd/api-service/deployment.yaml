@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: api-service
-          image: ghcr.io/pallava-joshi/cfd/api-service:latest
+          image: ghcr.io/pallava-joshi/cfd/api-service:v1.2.1
           ports:
             - containerPort: 3001
               name: http

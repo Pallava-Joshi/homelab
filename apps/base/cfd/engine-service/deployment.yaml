@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: engine-service
-          image: ghcr.io/pallava-joshi/cfd/engine-service:latest
+          image: ghcr.io/pallava-joshi/cfd/engine-service:v1.2.1
           ports:
             - containerPort: 3002
               name: http

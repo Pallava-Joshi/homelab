@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: price-poller-service
-          image: ghcr.io/pallava-joshi/cfd/price-poller-service:latest
+          image: ghcr.io/pallava-joshi/cfd/price-poller-service:v1.2.1
           ports:
             - containerPort: 3003
               name: http
