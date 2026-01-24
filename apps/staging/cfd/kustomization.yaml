@@ -5,4 +5,5 @@ resources:
   - ../../base/cfd
   - cloudflare.yaml
   - cloudflare-secret.yaml
-  # - cfd-container-env-secret.yaml
+  - engine-service-env-secret.yaml
+  - api-service-env-secret.yaml

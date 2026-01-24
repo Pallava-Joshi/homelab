@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: price-poller-service
+  namespace: cfd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: price-poller-service
+  template:
+    metadata:
+      labels:
+        app: price-poller-service
+    spec:
+      containers:
+        - name: price-poller-service
+          image: ghcr.io/pallava-joshi/cfd/price-poller-service:latest
+          ports:
+            - containerPort: 3003
+              name: http
+              protocol: TCP
+          env:
+            - name: PORT
+              value: "3003"
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: NODE_ENV
+              value: "production"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3003
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3003
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3

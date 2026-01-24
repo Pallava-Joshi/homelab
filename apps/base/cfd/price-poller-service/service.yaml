@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: price-poller-service
+  namespace: cfd
+spec:
+  selector:
+    app: price-poller-service
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3003
+      protocol: TCP
+  type: ClusterIP
