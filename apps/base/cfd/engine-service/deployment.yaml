@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: engine-service
-          image: ghcr.io/pallava-joshi/cfd/engine-service:v1.2.1
+          image: ghcr.io/pallava-joshi/cfd/engine-service:v1.2.2
           ports:
             - containerPort: 3002
               name: http
@@ -55,3 +55,4 @@ spec:
             initialDelaySeconds: 10
             periodSeconds: 5
             failureThreshold: 3
+

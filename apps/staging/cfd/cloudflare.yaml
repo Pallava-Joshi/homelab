@@ -58,6 +58,12 @@ data:
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
+    # API routes through nginx proxy (strips /api prefix)
+    - hostname: exness.vibingmonk.in
+      path: /api/*
+      service: http://api-proxy:80
+    # Web UI - catches everything else
     - hostname: exness.vibingmonk.in
       service: http://web:80
+    # Fallback for unmatched requests
     - service: http_status:404

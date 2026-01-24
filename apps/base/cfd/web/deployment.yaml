@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: ghcr.io/pallava-joshi/cfd/web:v1.2.1
+          image: ghcr.io/pallava-joshi/cfd/web:v1.2.2
           ports:
             - containerPort: 3000
               name: http
@@ -25,6 +25,8 @@ spec:
               value: "production"
             - name: HOSTNAME
               value: "0.0.0.0"
+            - name: NEXT_PUBLIC_API_URL
+              value: "https://exness.vibingmonk.in/api"
           resources:
             requests:
               memory: "256Mi"
