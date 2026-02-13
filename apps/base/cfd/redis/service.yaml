@@ -12,4 +12,4 @@ spec:
       targetPort: 6379
       protocol: TCP
   type: ClusterIP
-  clusterIP: None  # Headless service for StatefulSet
+  clusterIP: None # Headless service for StatefulSet

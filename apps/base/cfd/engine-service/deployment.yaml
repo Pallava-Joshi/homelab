@@ -42,16 +42,8 @@ spec:
               memory: "512Mi"
               cpu: "500m"
           livenessProbe:
-            httpGet:
-              path: /health
-              port: 3002
+            exec:
+              command: ["pgrep", "node"]
             initialDelaySeconds: 30
-            periodSeconds: 10
-            failureThreshold: 3
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 3002
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            periodSeconds: 20
             failureThreshold: 3
