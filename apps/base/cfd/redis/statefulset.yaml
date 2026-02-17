@@ -21,17 +21,25 @@ spec:
             - containerPort: 6379
               name: redis
               protocol: TCP
+
           command:
             - redis-server
             - --appendonly
-            - "yes"
+            - "no"
+            - --save
+            - "60 1000"
+            - --maxmemory
+            - "900mb"
+            - --maxmemory-policy
+            - "noeviction"
+
           resources:
             requests:
-              memory: "256Mi"
+              memory: "512Mi"
               cpu: "100m"
             limits:
-              memory: "512Mi"
-              cpu: "200m"
+              memory: "1Gi"
+              cpu: "300m"
           volumeMounts:
             - name: redis-data
               mountPath: /data
